@@ -31,7 +31,7 @@ public class TranslatorMethodAssembler extends Assembler {
       PsiType fromType = parameters[0].getType();
       PsiType toType = psiMethod.getReturnType();
 
-      PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(topLevelClass, fromType, toType, psiMethod);
+      PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(topLevelClass, fromType, toType, psiMethod, false);
       replaceMethod(translatorMethod);
 
       generateScheduledTranslatorMethods(topLevelClass);

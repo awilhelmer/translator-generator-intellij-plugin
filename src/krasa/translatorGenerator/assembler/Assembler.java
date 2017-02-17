@@ -41,7 +41,8 @@ public abstract class Assembler {
             continue;
          }
          translatorDto.processed = true;
-         PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(builderClass, translatorDto.getFrom(), translatorDto.getTo(), null);
+         PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(builderClass, translatorDto.getFrom(), translatorDto.getTo(), null,
+               translatorDto.isStatic());
          addToClass(builderClass, translatorMethod);
       }
       if (context.hasAnyScheduled()) {

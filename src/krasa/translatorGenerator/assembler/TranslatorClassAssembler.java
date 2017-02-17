@@ -19,7 +19,7 @@ public class TranslatorClassAssembler extends Assembler {
 
 	public void assemble() {
 		PsiClass builderClass = psiBuilder.createTranslatorClass(sourceClass, sourceClass);
-		PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(builderClass, sourceClass, sourceClass, null);
+		PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(builderClass, sourceClass, sourceClass,null, false);
 		addToClass(builderClass, translatorMethod);
 		generateScheduledTranslatorMethods(builderClass);
 		psiFacade.shortenClassReferences(builderClass);

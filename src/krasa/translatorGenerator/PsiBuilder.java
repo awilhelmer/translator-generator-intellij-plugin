@@ -30,30 +30,30 @@ public class PsiBuilder {
             .getInnerClasses()[0];
    }
 
-   public PsiMethod createTranslatorMethod(PsiClass builderClass, PsiClass from, PsiClass to, PsiMethod psiMethod) {
-      PsiMethod methodFromText = elementFactory.createMethodFromText(new MethodCodeGenerator(from, to, context, psiMethod, false).translatorMethod(), builderClass);
-      context.markTranslatorMethodProcessed(PsiUtil.getTypeByPsiElement(from), PsiUtil.getTypeByPsiElement(to), false);
+   public PsiMethod createTranslatorMethod(PsiClass builderClass, PsiClass from, PsiClass to, PsiMethod psiMethod, boolean isStatic) {
+      PsiMethod methodFromText = elementFactory.createMethodFromText(new MethodCodeGenerator(from, to, context, psiMethod, isStatic).translatorMethod(), builderClass);
+      context.markTranslatorMethodProcessed(PsiUtil.getTypeByPsiElement(from), PsiUtil.getTypeByPsiElement(to), isStatic);
       return methodFromText;
    }
 
-   private PsiMethod createArrayTranslatorMethod(PsiClass builderClass, PsiClass from, PsiClass to, PsiMethod psiMethod) {
-      PsiMethod methodFromText = elementFactory.createMethodFromText(new MethodCodeGenerator(from, to, context, psiMethod,false).arrayTranslatorMethod(),
+   private PsiMethod createArrayTranslatorMethod(PsiClass builderClass, PsiClass from, PsiClass to, PsiMethod psiMethod, boolean isStatic) {
+      PsiMethod methodFromText = elementFactory.createMethodFromText(new MethodCodeGenerator(from, to, context, psiMethod,isStatic).arrayTranslatorMethod(),
             builderClass);
-      context.markTranslatorMethodProcessed(PsiUtil.getTypeByPsiElement(from), PsiUtil.getTypeByPsiElement(to), false);
+      context.markTranslatorMethodProcessed(PsiUtil.getTypeByPsiElement(from), PsiUtil.getTypeByPsiElement(to), isStatic);
       return methodFromText;
    }
 
-   public PsiMethod createTranslatorMethod(PsiClass builderClass, PsiType fromType, PsiType toType, PsiMethod psiMethod) {
+   public PsiMethod createTranslatorMethod(PsiClass builderClass, PsiType fromType, PsiType toType, PsiMethod psiMethod, boolean isStatic) {
       if (fromType instanceof PsiArrayType) {
          fromType = fromType.getDeepComponentType();
          toType = toType.getDeepComponentType();
          PsiClassType from = (PsiClassType) fromType;
          PsiClassType to = (PsiClassType) toType;
-         return createArrayTranslatorMethod(builderClass, from.resolve(), to.resolve(), psiMethod);
+         return createArrayTranslatorMethod(builderClass, from.resolve(), to.resolve(), psiMethod, isStatic);
       }
 
       PsiClassType from = (PsiClassType) fromType;
       PsiClassType to = (PsiClassType) toType;
-      return createTranslatorMethod(builderClass, from.resolve(), to.resolve(), psiMethod);
+      return createTranslatorMethod(builderClass, from.resolve(), to.resolve(), psiMethod, isStatic);
    }
 }
