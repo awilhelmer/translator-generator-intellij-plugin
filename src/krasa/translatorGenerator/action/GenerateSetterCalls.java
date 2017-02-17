@@ -1,17 +1,16 @@
 package krasa.translatorGenerator.action;
 
-import static com.intellij.openapi.actionSystem.CommonDataKeys.EDITOR;
-
-import krasa.translatorGenerator.Context;
-import krasa.translatorGenerator.PsiFacade;
-import krasa.translatorGenerator.assembler.SetterCallsAssembler;
-
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiLocalVariable;
 import com.intellij.psi.util.PsiTreeUtil;
+import krasa.translatorGenerator.Context;
+import krasa.translatorGenerator.PsiFacade;
+import krasa.translatorGenerator.assembler.SetterCallsAssembler;
+
+import static com.intellij.openapi.actionSystem.CommonDataKeys.EDITOR;
 
 /**
  * @author Vojtech Krasa

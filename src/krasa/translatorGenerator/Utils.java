@@ -1,13 +1,13 @@
 package krasa.translatorGenerator;
 
-import static java.lang.Character.toLowerCase;
-import static java.lang.Character.toUpperCase;
-
-import java.util.List;
-
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.util.PropertyUtil;
+
+import java.util.List;
+
+import static java.lang.Character.toLowerCase;
+import static java.lang.Character.toUpperCase;
 
 /**
  * @author Vojtech Krasa

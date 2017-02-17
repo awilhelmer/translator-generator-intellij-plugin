@@ -1,10 +1,9 @@
 package krasa.translatorGenerator.assembler;
 
-import krasa.translatorGenerator.Context;
-import krasa.translatorGenerator.PsiFacade;
-
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiMethod;
+import krasa.translatorGenerator.Context;
+import krasa.translatorGenerator.PsiFacade;
 
 /**
  * @author Vojtech Krasa
@@ -20,7 +19,7 @@ public class TranslatorClassAssembler extends Assembler {
 
 	public void assemble() {
 		PsiClass builderClass = psiBuilder.createTranslatorClass(sourceClass, sourceClass);
-		PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(builderClass, sourceClass, sourceClass);
+		PsiMethod translatorMethod = psiBuilder.createTranslatorMethod(builderClass, sourceClass, sourceClass, null);
 		addToClass(builderClass, translatorMethod);
 		generateScheduledTranslatorMethods(builderClass);
 		psiFacade.shortenClassReferences(builderClass);

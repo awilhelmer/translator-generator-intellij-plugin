@@ -44,16 +44,16 @@ TranslatorGenerator is a plugin for IntelliJ IDEA that automates creation of tra
 
 	<actions>
 		<!-- Add your actions here -->   
-		<action id="krasa.translatorGenerator.action.GenerateSetterCalls"
+		<action id="krasa.krasa.translatorGenerator.action.GenerateSetterCalls"
 			class="krasa.translatorGenerator.action.GenerateSetterCalls" text="Generate Setter Calls">
 			<add-to-group group-id="GenerateGroup" anchor="last" />
 		</action>
-		<action id="krasa.translatorGenerator.action.GenerateTranslatorClassAction"
-			class="krasa.translatorGenerator.action.GenerateTranslatorClassAction" text="Generate translator class">
+		<action id="krasa.krasa.translatorGenerator.action.GenerateTranslatorClassAction"
+			class="krasa.translatorGenerator.action.GenerateTranslatorClassAction" text="Generate mapping class">
 			<add-to-group group-id="GenerateGroup" anchor="last" />
 		</action>
-		<action id="krasa.translatorGenerator.action.GenerateTranslatorMethodAction"
-			class="krasa.translatorGenerator.action.GenerateTranslatorMethodAction" text="Generate translator method">
+		<action id="krasa.krasa.translatorGenerator.action.GenerateTranslatorMethodAction"
+			class="krasa.translatorGenerator.action.GenerateTranslatorMethodAction" text="Generate mapping method body">
 			<add-to-group group-id="GenerateGroup" anchor="last" />
 		</action>
 	</actions>

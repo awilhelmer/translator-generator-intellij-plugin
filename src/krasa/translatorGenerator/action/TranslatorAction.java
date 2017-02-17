@@ -1,10 +1,9 @@
 package krasa.translatorGenerator.action;
 
-import krasa.translatorGenerator.PsiFacade;
-
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.psi.PsiClass;
+import krasa.translatorGenerator.PsiFacade;
 
 /**
  * @author Vojtech Krasa

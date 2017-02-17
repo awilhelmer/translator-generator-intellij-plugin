@@ -1,11 +1,15 @@
 package krasa.translatorGenerator.assembler;
 
+import com.intellij.psi.JavaPsiFacade;
+import com.intellij.psi.PsiCodeBlock;
+import com.intellij.psi.PsiDeclarationStatement;
+import com.intellij.psi.PsiElementFactory;
+import com.intellij.psi.PsiLocalVariable;
+import com.intellij.psi.PsiStatement;
+import com.intellij.psi.util.PsiTreeUtil;
 import krasa.translatorGenerator.Context;
 import krasa.translatorGenerator.PsiFacade;
 import krasa.translatorGenerator.generator.SetterCallsGenerator;
-
-import com.intellij.psi.*;
-import com.intellij.psi.util.PsiTreeUtil;
 
 /**
  * @author Vojtech Krasa
