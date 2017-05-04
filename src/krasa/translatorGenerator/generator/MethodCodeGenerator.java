@@ -246,7 +246,7 @@ public class MethodCodeGenerator {
    }
 
    private PsiClass[] getImplementingClasses(PsiClass to1) {
-      PsiElement[] toImpls = createImplementationsSearcher().searchImplementations(to1, context.getEditor(), 0, true, false);
+      PsiElement[] toImpls = createImplementationsSearcher().searchImplementations(to1, context.getEditor(), true, false);
       toImpls = ArrayUtil.reverseArray(toImpls);
       PsiClass[] psiClasses = new PsiClass[toImpls.length];
       for (int i = 0; i < toImpls.length; i++) {
@@ -338,7 +338,6 @@ public class MethodCodeGenerator {
    protected static ImplementationSearcher createImplementationsSearcher() {
       return new ImplementationSearcher() {
 
-         @Override
          protected PsiElement[] filterElements(PsiElement element, PsiElement[] targetElements, int offset) {
             return MethodCodeGenerator.filterElements(targetElements);
          }
