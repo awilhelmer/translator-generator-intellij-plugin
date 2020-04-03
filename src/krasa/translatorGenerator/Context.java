@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiType;
 import com.intellij.refactoring.typeCook.Util;
-import com.intellij.util.containers.ConcurrentHashSet;
+import com.intellij.util.containers.ContainerUtil;
 import krasa.translatorGenerator.assembler.TranslatorDto;
 
 import java.util.Set;
@@ -18,7 +18,7 @@ public class Context {
 
    private static final Logger LOG = Logger.getInstance(Context.class.getName());
 
-   public Set<TranslatorDto> scheduled = new ConcurrentHashSet<TranslatorDto>();
+   public Set<TranslatorDto> scheduled = ContainerUtil.newConcurrentSet();
 
    public boolean replaceMethods = true;
 
